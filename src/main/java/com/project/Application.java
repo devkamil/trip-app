@@ -1,12 +1,13 @@
-package pl.devkamil;
+package com.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
-public class ToDoAppApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ToDoAppApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

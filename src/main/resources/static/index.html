@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/angular-bootstrap.js" type="text/javascript"></script>
+    <!--<script src="js/todo.js"></script>-->
+    <!--<script src="js/other.js"></script>-->
+    <!--<script src="js/hello.js"></script>-->
+    <!--<script src="js/script.js"></script>-->
+    <!--<script src="js/new.js"></script>-->
+    <script data-require="angular.js@1.6.2" data-semver="1.6.2" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
     <meta charset="UTF-8">
     <title>ToDo App</title>
     <link href="css/angular-bootstrap.css" rel="stylesheet">
@@ -9,18 +16,80 @@
             display: none !important;
         }
     </style>
+
 </head>
 
 <body ng-app="todo-app">
+
 <div class="container">
-    <h1>Todo</h1>
-    <div ng-controller="MainController as MainController" ng-cloak class="ng-cloak">
-        <p>The ID is {{MainController.todo.id}}</p>
-        <p>The content is {{MainController.todo.content}}</p>
-    </div>
+    <h3><b>ToDo App</b></h3>
+
+        <div ng-controller="MainController" ng-cloak class="ng-cloak">
+            <div>
+                <form name="addTodo">
+                    <input type="textarea" placeholder="To Do ..." ng-model="content" />
+                    <input type="date" id="theDate" ng-model="date" />
+                    <input type="submit" value="Add" ng-click="insertData()"/>
+                </form>
+                <p>{{todo}}</p>
+            </div>
+
+
+            <div>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th> No. </th>
+                        <th> Name </th>
+                        <th> Stars </th>
+                        <th> Date </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="tod in todos">
+
+                        <td>{{$number = $index + 1 }}</td>
+                        <td>{{tod.name}}</td>
+                        <td>{{tod.age}}</td>
+                        <td>{{tod.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{$number = $number + 1}}</td>
+                        <td>{{content}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!--<div ng-include="'todoView.html'"></div>-->
+
+        </div>
+
+
+
+    <!--<div ng-controller="MainController as vm" ng-cloak class="ng-cloak">-->
+        <!--<p>The ID is {{vm.todo.id}}</p>-->
+        <!--<p>The content is {{vm.todo.content}}</p>-->
+        <!--<p>{{ 2 + 1 }}</p>-->
+
+        <!--<div>-->
+            <!--<p>{{todo}}</p>-->
+            <!--<form name="addTodo">-->
+                <!--<input type="text" placeholder="To Do..." ng-model="todo" />-->
+                <!--<input type="submit" value="Add" ng-click="search(todo)" />-->
+            <!--</form>-->
+        <!--</div>-->
+
+        <!--<div ng-include="'otherView.html'"/>-->
+        <!--<div ng-include="'todoView.html'" />-->
+
+    <!--</div>-->
+
+
 </div>
-<script src="js/angular-bootstrap.js" type="text/javascript"></script>
-<script src="js/todo.js"></script>
+
 </body>
 
 </html>
