@@ -11,15 +11,15 @@ public class Todo {
     @Column(name="todo_id")
     private Long id;
     private String content;
-    private String done;
+    private boolean done;
     private String date;
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -31,14 +31,6 @@ public class Todo {
         this.content = content;
     }
 
-    public String getDone() {
-        return done;
-    }
-
-    public void setDone(String done) {
-        this.done = done;
-    }
-
     public String getDate() {
         return date;
     }
@@ -47,12 +39,21 @@ public class Todo {
         this.date = date;
     }
 
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+
     @Override
     public String toString() {
         return "Todo{" +
                 "id=" + id +
                 ", content='" + content + '\'' +
-                ", done='" + done + '\'' +
+                ", done=" + done +
                 ", date='" + date + '\'' +
                 '}';
     }
@@ -65,17 +66,17 @@ public class Todo {
 
         Todo todo = (Todo) o;
 
-        if (id != todo.id) return false;
+        if (done != todo.done) return false;
+        if (id != null ? !id.equals(todo.id) : todo.id != null) return false;
         if (content != null ? !content.equals(todo.content) : todo.content != null) return false;
-        if (done != null ? !done.equals(todo.done) : todo.done != null) return false;
         return date != null ? date.equals(todo.date) : todo.date == null;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (content != null ? content.hashCode() : 0);
-        result = 31 * result + (done != null ? done.hashCode() : 0);
+        result = 31 * result + (done ? 1 : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
     }
