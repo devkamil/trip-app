@@ -5,26 +5,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.js"></script>
 
     <script src="js/app-todo.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
     <meta charset="UTF-8">
     <title>ToDo App</title>
-    <style type="text/css">
-        [ng\:cloak], [ng-cloak], .ng-cloak {
-            display: none !important;
-        }
-        table, th, td {
-    border: 3px solid black;
-    }
-
-    table {
-         border-collapse: collapse;
-        width: 50%;
-    }
-
-    th {
-         height: 50px;
-    }
-    </style>
-
+    
 </head>
 
 <body ng-app="todo-app">
@@ -36,9 +21,9 @@
             <div>
                 <form name="addTodo">
                     <input type="textarea" placeholder="To Do ..." ng-model="content"  />
-                    <input type="datetime" placeholder="Date: yyyy-MM-dd" ng-model="date"  />
-                    <input type="submit" value="Add" ng-click="addTodos(); reloadPage()"/>&nbsp; &nbsp;
-                    Done? <input type="checkbox" ng-model="done" />
+                    <input type="datetime" placeholder="Date: yyyy-MM-dd" ng-model="date"  />&nbsp; &nbsp;
+                    Done? <input type="checkbox" ng-model="done" />&nbsp; &nbsp;
+                    <input type="submit" id="submitAdd" value="Add" ng-click="addTodos(); reloadPage()"/>
                 </form>
                 <p>{{todo}}</p>
             </div>
