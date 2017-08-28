@@ -1,0 +1,39 @@
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+    }
+
+    table {
+         font-family: "Lato","sans-serif";
+    }
+
+    table.one {
+         margin-bottom: 3em;
+         border-collapse:collapse;
+    }
+
+    td {
+        text-align: center;
+         width: 10em;
+        padding: 1em;
+     }
+
+    th {
+        text-align: center;
+        padding: 1em;
+        background-color: #e8503a;
+         color: white;
+    }
+
+    tr {
+         height: 1em;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table tr:nth-child(odd) {
+        background-color:#fff;
+    }
+
+
