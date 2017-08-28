@@ -12,7 +12,17 @@
             display: none !important;
         }
         table, th, td {
-    border: 1px solid black;
+    border: 3px solid black;
+    }
+
+    table {
+         border-collapse: collapse;
+        width: 50%;
+    }
+
+    th {
+         height: 50px;
+    }
     </style>
 
 </head>
@@ -26,9 +36,9 @@
             <div>
                 <form name="addTodo">
                     <input type="textarea" placeholder="To Do ..." ng-model="content"  />
-                    <input type="datetime"  ng-model="date"  />
-                    <input type="submit" value="Add" ng-click="addTodos(); reloadPage()"/>
-                    <input type="checkbox" ng-model="done" />
+                    <input type="datetime" placeholder="Date: yyyy-MM-dd" ng-model="date"  />
+                    <input type="submit" value="Add" ng-click="addTodos(); reloadPage()"/>&nbsp; &nbsp;
+                    Done? <input type="checkbox" ng-model="done" />
                 </form>
                 <p>{{todo}}</p>
             </div>
@@ -85,14 +95,16 @@
                         </td>
                         <td>{{tod.date}}</td>
                         <td >
-                            <div ng-hide="viewField">{{tod.done}}</div>
+                            <div ng-hide="viewField">{{tod.done | doneUndone}}</div>
                             <div ng-show="modifyField"><input type="checkbox" value="{{tod.done}}" ng-model="tod.done" /></div>
                         </td>
-                        <td>
+                        <td style="text-align:center">
                             <input type="button" value="Edit" ng-hide="viewField" ng-click="modify(tod)" />
                             <input type="submit" value="Update" ng-show="modifyField" ng-click="editTodo(tod); reloadPage()" />
                         </td>
-                        <td><input type="button" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" /> </td>
+                        <td style="text-align:center">
+                            <input type="button" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" />
+                        </td>
                     </form>
                     </tr>
                     </tbody>

@@ -46,7 +46,13 @@ app.controller('mainController', function ($scope, $http, $window) {
 
 
 
-
+//    $scope.booValue = function (tod) {
+//        if(tod.done) {
+//            Done;
+//        } else {
+//            Undone;
+//        }
+//      };
 
 
 
@@ -80,4 +86,12 @@ app.controller('mainController', function ($scope, $http, $window) {
 
 
 
+});
+
+
+
+app.filter('doneUndone', function() {
+    return function (text) {
+        return text ? "Done" : "Undone";
+     }
 });
