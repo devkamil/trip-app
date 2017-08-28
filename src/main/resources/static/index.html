@@ -27,7 +27,8 @@
                 <form name="addTodo">
                     <input type="textarea" placeholder="To Do ..." ng-model="content"  />
                     <input type="datetime"  ng-model="date"  />
-                    <input type="submit" value="Add" ng-click="addTodos()"/>
+                    <input type="submit" value="Add" ng-click="addTodos(); reloadPage()"/>
+                    <input type="checkbox" ng-model="done" />
                 </form>
                 <p>{{todo}}</p>
             </div>
@@ -39,13 +40,60 @@
                         <th> To Do </th>
                         <th> Date </th>
                         <th> Done? </th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
+                        <!--<tr ng-repeat="tod in todos"><form>-->
+                            <!--<td>-->
+                                <!--<div ng-hide="viewField">{{tod.content | uppercase}}</div>-->
+                                <!--<div ng-show="modifyField"><input type="text" ng-model="tod.content" /></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div ng-hide="viewField">{{tod.date}}</div>-->
+                                <!--<div ng-show="modifyField"><input type="text" ng-model="tod.date" /></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div ng-hide="viewField">{{tod.done}}</div>-->
+                                <!--<div ng-show="modifyField"><input type="text" ng-model="tod.done" /></div>-->
+                            <!--</td>-->
+
+                            <!--<td>-->
+                                <!--<button ng-hide="viewField" ng-click="modify(tod)">Edit</button>-->
+                                <!--<button ng-show="modifyField" ng-click="update(tod)">Update</button>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button ng-hide="viewField">Remove</button>-->
+                            <!--</td>-->
+
+
+
+
+
+                        <!--</form></tr>-->
+
+
+
+
+
                     <tr ng-repeat="tod in todos">
-                        <td>{{tod.content}}</td>
+                        <form>
+                        <td>
+                            <div ng-hide="viewField">{{tod.content}}</div>
+                            <div ng-show="modifyField"><input type="text" ng-model="tod.content" /></div>
+                        </td>
                         <td>{{tod.date}}</td>
-                        <td align="center">{{tod.done}}<input type="checkbox" value="{{tod.done}}" /></td>
+                        <td >
+                            <div ng-hide="viewField">{{tod.done}}</div>
+                            <div ng-show="modifyField"><input type="checkbox" value="{{tod.done}}" ng-model="tod.done" /></div>
+                        </td>
+                        <td>
+                            <input type="button" value="Edit" ng-hide="viewField" ng-click="modify(tod)" />
+                            <input type="submit" value="Update" ng-show="modifyField" ng-click="editTodo(tod); reloadPage()" />
+                        </td>
+                        <td><input type="button" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" /> </td>
+                    </form>
                     </tr>
                     </tbody>
                 </table>

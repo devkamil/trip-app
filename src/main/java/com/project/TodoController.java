@@ -24,6 +24,20 @@ public class TodoController {
         return todos;
     }
 
+    @DeleteMapping("/{id}")
+    public void delete (@PathVariable ("id") long id) {
+        todoRepository.delete(id);
+    }
+
+
+    @PutMapping ("/{id}")
+    public Todo edit (@RequestBody Todo todo, @PathVariable ("id") long id) {
+       return this.todoRepository.save(todo);
+    }
+
+
+
+
 //    @PostMapping
 //    public void createTodo(String todo) {
 //        //Zapisac do bazy
