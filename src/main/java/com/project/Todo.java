@@ -2,6 +2,7 @@ package com.project;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -12,7 +13,7 @@ public class Todo {
     private Long id;
     private String content;
     private boolean done;
-    private String date;
+    private Date date;
 
 
     public Long getId() {
@@ -31,11 +32,11 @@ public class Todo {
         this.content = content;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -57,7 +58,6 @@ public class Todo {
                 ", date='" + date + '\'' +
                 '}';
     }
-
 
     @Override
     public boolean equals(Object o) {

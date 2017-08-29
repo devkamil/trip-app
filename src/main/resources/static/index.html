@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <script data-require="angular.js@1.6.2" data-semver="1.6.2" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="js/app-todo.js"></script>
-    <!--<link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet" href="css/todo.css">
 
     <meta charset="UTF-8">
@@ -15,20 +18,62 @@
 
 <body ng-app="todo-app" class="ng-cloak">
 
+<!--<style>-->
+  <!--.full button span {-->
+    <!--background-color: limegreen;-->
+    <!--border-radius: 32px;-->
+    <!--color: black;-->
+  <!--}-->
+  <!--.partially button span {-->
+    <!--background-color: orange;-->
+    <!--border-radius: 32px;-->
+    <!--color: black;-->
+  <!--}-->
+<!--</style>-->
+
 <div class="container">
     <h3><b>ToDo App</b></h3>
 
         <div ng-controller="mainController" ng-cloak class="ng-cloak">
-            <div>
-                <form name="addTodo">
-                    <input type="textarea" placeholder="To Do ..." ng-model="content"  />
-                    <input type="datetime" placeholder="Date: yyyy-MM-dd" ng-model="date"  />&nbsp; &nbsp;
-                    Done? <input type="checkbox" ng-model="done" />&nbsp; &nbsp;
-                    <input type="submit" id="submitAdd" value="Add" ng-click="addTodos(); reloadPage()"/>
-                </form>
-            </div>
 
-            <div>
+            <form name="addTodo">
+
+                    <div class="bootstrap-iso">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+
+                                    <p class="input-group"> <!-- Date input -->
+
+
+                   <input type="textarea" placeholder="To Do ..." ng-model="content" class="content"  />
+                                        <input type="text"  uib-datepicker-popup ng-model="date" is-open="popup.opened" datepicker-options="dateOptions"
+                                           ng-required="true" close-text="Close" id="date" name="date"  placeholder="yyyy-MM-dd"/>
+                                        <span class="input-group-btn" >
+                                            <button type="button" class="btn btn-default"  ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                        </span>
+
+
+                    <!--&nbsp; &nbsp;-->
+                    Done? <input type="checkbox" ng-model="done" />
+                                        &nbsp; &nbsp;
+    <input type="submit" id="submitAdd" value="Add" ng-click="addTodos(); reloadPage()"/>
+
+
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </form>
+
+
+
+
+
+            <div class="centered">
                 <table>
                     <thead>
                     <tr>
@@ -41,22 +86,22 @@
                     </thead>
                     <tbody>
 
-                    <tr ng-repeat="tod in todos">
+                    <tr ng-repeat="tod in todos" >
                         <form>
-                        <td>
+                        <td class="table-todos">
                             <div ng-hide="viewField">{{tod.content}}</div>
                             <div ng-show="modifyField"><input type="text" ng-model="tod.content" /></div>
                         </td>
-                        <td>{{tod.date}}</td>
-                        <td >
+                        <td class="table-todos">{{tod.date | date: 'yyyy-MM-dd'}}</td>
+                        <td class="table-todos">
                             <div ng-hide="viewField">{{tod.done | doneUndone}}</div>
                             <div ng-show="modifyField"><input type="checkbox" value="{{tod.done}}" ng-model="tod.done" /></div>
-                        </td>
-                        <td style="text-align:center">
-                            <input type="button" value="Edit" ng-hide="viewField" ng-click="modify(tod)" />
+                        </td >
+                        <td class="table-todos">
+                            <input type="button" value="Edit" ng-hide="viewField" ng-click="modify(tod)"  />
                             <input type="submit" value="Update" ng-show="modifyField" ng-click="editTodo(tod); reloadPage()" />
                         </td>
-                        <td style="text-align:center">
+                        <td  class="table-todos">
                             <input type="button" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" />
                         </td>
                     </form>
@@ -68,6 +113,8 @@
 
         </div>
 </div>
+
+
 
 </body>
 </html>

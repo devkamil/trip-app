@@ -1,4 +1,4 @@
-var app = angular.module('todo-app', []);
+var app = angular.module('todo-app', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
 
 app.controller('mainController', function ($scope, $http, $window) {
@@ -46,13 +46,15 @@ app.controller('mainController', function ($scope, $http, $window) {
 
 
 
-//    $scope.booValue = function (tod) {
-//        if(tod.done) {
-//            Done;
-//        } else {
-//            Undone;
-//        }
-//      };
+    $scope.open = function() {
+        $scope.popup.opened = true;
+    };
+
+    $scope.popup = {
+        opened: false
+    };
+
+
 
 
 
@@ -90,8 +92,58 @@ app.controller('mainController', function ($scope, $http, $window) {
 
 
 
+
+
+
+
+
+
+//    $scope.inlineOptions = {
+//        customClass: getDayClass,
+//        minDate: new Date(),
+//        showWeeks: true
+//    };
+//
+//    $Scope.dateOptions = {
+//        formatYear: 'yy',
+//        maxDate: new Date(2020, 5, 22),
+//        minDate: new Date(),
+//        startingDay: 1
+//    };
+
+
+
+
+
+
+
+
+
+
 app.filter('doneUndone', function() {
     return function (text) {
         return text ? "Done" : "Undone";
      }
 });
+
+
+
+
+//app.directive('dateFrom', function() {
+//    return function(scope, element, attrs) {
+//        $(element).datepicker({minDate: currentTime });
+//        $(element).change(function () {
+//            currentTime = element.val();
+//        });
+
+
+//       return function(){
+//            $('datetimepicker4').datetimepicker();
+//    };
+//});
+
+
+//
+//           $(function () {
+//                $('#datetimepicker4').datetimepicker();
+//            });

@@ -6,16 +6,21 @@
          font-family: "Lato","sans-serif";
     }
 
-    table.one {
-         margin-bottom: 3em;
-         border-collapse:collapse;
+    div.centered {
+        text-align: center;
     }
 
-    td {
+    div.centered table {
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .table-todos {
         text-align: center;
          width: 10em;
         padding: 1em;
      }
+
 
     th {
         text-align: center;
@@ -35,5 +40,22 @@
     table tr:nth-child(odd) {
         background-color:#fff;
     }
+
+    .input-group {
+
+        line-height: 20px;
+        text-align: right;
+        margin: 10 auto;
+    }
+
+    .content {
+        margin-left: 20px;
+        margin-right: 1em;
+    }
+
+    .btn{
+        padding: 2px 8px;
+    }
+
 
 
