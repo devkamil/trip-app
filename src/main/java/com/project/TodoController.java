@@ -20,8 +20,7 @@ public class TodoController {
 
     @GetMapping
     public List<Todo> getTodos() {
-        List<Todo> todos = (List<Todo>) todoRepository.findAll();
-        return todos;
+        return (List<Todo>) todoRepository.findAll();
     }
 
     @DeleteMapping("/{id}")
@@ -34,32 +33,5 @@ public class TodoController {
     public Todo edit (@RequestBody Todo todo, @PathVariable ("id") long id) {
        return this.todoRepository.save(todo);
     }
-
-
-
-
-//    @PostMapping
-//    public void createTodo(String todo) {
-//        //Zapisac do bazy
-//    }
-
-
-
-//    @GetMapping
-//    public List<String> getTodos() {
-//        //Podbranie listy z bazy danych
-//        List<String> todos = new ArrayList<>();
-//        todos.add("Coś tam");
-//        return todos;
-//    }
-
-
-    //Stworzenie nowego zadania
-    //Pobranie listy zadań
-    //Modyfikacja tekstu zadania
-    //Usunięcie zadnia
-    //Oznaczenie zadania jako zrobionego / niezrobionego
-
-
 
 }
