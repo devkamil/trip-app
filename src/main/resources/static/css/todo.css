@@ -2,6 +2,11 @@
             display: none !important;
     }
 
+    .title{
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
     table {
          font-family: "Lato","sans-serif";
     }
@@ -12,7 +17,6 @@
 
     div.centered table {
         margin: 0 auto;
-        text-align: left;
     }
 
     .table-todos {
@@ -43,19 +47,142 @@
 
     .input-group {
 
-        line-height: 20px;
-        text-align: right;
-        margin: 10 auto;
+
+        margin: 0 auto;
+        margin-bottom: 1em;
     }
 
-    .content {
-        margin-left: 20px;
-        margin-right: 1em;
+    .col-centered {
+        float: none;
+        margin: 0 auto;
     }
 
-    .btn{
-        padding: 2px 8px;
-    }
+
+
+
+
+.button-red {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 13px;
+  background: #f5363f;
+  padding: 4px 14px 4px 14px;
+  text-decoration: none;
+}
+
+.button-red:hover {
+  background: #e00303;
+  text-decoration: none;
+}
+
+
+
+.button-blue {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 13px;
+  background: #4698f0;
+  padding: 4px 10px 4px 10px;
+  text-decoration: none;
+}
+
+.button-blue:hover {
+  background: #3b5af5;
+  text-decoration: none;
+}
+
+.button-green {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 13px;
+  background: #1dd600;
+  padding: 4px 10px 4px 10px;
+  text-decoration: none;
+}
+
+.button-green:hover {
+  background: #009e12;
+  text-decoration: none;
+}
+
+
+
+
+.add-button {
+  background: #02bf3b;
+  background-image: -webkit-linear-gradient(top, #02bf3b, #27e64d);
+  background-image: -moz-linear-gradient(top, #02bf3b, #27e64d);
+  background-image: -ms-linear-gradient(top, #02bf3b, #27e64d);
+  background-image: -o-linear-gradient(top, #02bf3b, #27e64d);
+  background-image: linear-gradient(to bottom, #02bf3b, #27e64d);
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 4px 14px 4px 14px;
+  text-decoration: none;
+}
+
+.add-button:hover {
+  background: #02d144;
+  background-image: -webkit-linear-gradient(top, #02d144, #4b9902);
+  background-image: -moz-linear-gradient(top, #02d144, #4b9902);
+  background-image: -ms-linear-gradient(top, #02d144, #4b9902);
+  background-image: -o-linear-gradient(top, #02d144, #4b9902);
+  background-image: linear-gradient(to bottom, #02d144, #4b9902);
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -39,10 +39,10 @@ app.controller('mainController', function ($scope, $http, $window) {
     })};
 
 
-    $scope.modify = function(tod){
-        $scope.modifyField = true;
-        $scope.viewField = true;
-    };
+//    $scope.modify = function(tod){
+//        $scope.modifyField = true;
+//        $scope.viewField = true;
+//    };
 
 
 
@@ -54,21 +54,31 @@ app.controller('mainController', function ($scope, $http, $window) {
         opened: false
     };
 
+  $scope.dateOptions = {
+    startingDay: 1,
+    showWeeks: false
+  };
 
 
 
 
 
+    $scope.todos = function(){
+        $http.get("api/todos")
+            .then(function(response) {
+                    response = response.data;
+     })};
 
-//    $scope.editingTodo = {};
-//
-//    for (var i = 0, length = $scope.todos.length; i < length; i++) {
-//      $scope.editingTodo[$scope.todos[i].id] = false;
-//    }
-//
-//    $scope.modify = function(tod){
-//        $scope.editingTodo[tod.id] = true;
-//    };
+
+    $scope.editingTodo = {};
+
+    for (var i = 0, length = $scope.todos.length; i < length; i++) {
+      $scope.editingTodo[$scope.todos[i].id] = false;
+    }
+
+    $scope.modify = function(tod){
+        $scope.editingTodo[tod.id] = true;
+    };
 
 
 
