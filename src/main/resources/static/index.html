@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/todo.css">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width">-->
 
 
     <title>ToDo App</title>
@@ -26,40 +26,38 @@
 
         <div ng-controller="mainController" ng-cloak class="ng-cloak">
 
-            <form name="addTodo">
 
-                    <div class="bootstrap-iso">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="form-group col-md-7 col-sm-7 col-xs-7 col-centered">
-
-                                    <div class="input-group"> <!-- Date input -->
-
-                                         <div class="form-group col-md-4 col-sm-4 col-xs-4">
-                                            <input type="textarea" placeholder="To Do ..." ng-model="content" class="form-control input-group-lg content"  />
-                                         </div>
-                                         <div class="form-inline col-md-4 col-sm-4 col-xs-4">
-                                             <input type="text"  uib-datepicker-popup ng-model="date" is-open="popup.opened" datepicker-options="dateOptions"
-                                                      ng-required="true" close-text="Close" id="date" name="date"  placeholder="yyyy-MM-dd" class="form-control input-group-lg"/>
-                                         </div>
-                                         <div class="form-group col-md-1 col-sm-1 col-xs-1">
-                                              <span class="input-group-btn" >
-                                                    <button type="button" class="btn form-control input-group-lg"  ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                               </span>
-                                         </div>
-                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                Done? <input type="checkbox" ng-model="done" />
-                                         </div>
-                                         <div class="col-md-1 col-sm-1 col-xs-1">
-                                             <input type="submit" value="Add" ng-click="addTodos(); reloadPage()" class="add-button"/>
-                                         </div>
-
-                                    </div>
-
+            <form name="addTodo" class="form-inline">
+                  <div class="row">
+                       <div class="col-md-7 col-sm-10 col-xs-11 col-md-offset-2 col-xs-offset-1 col-centered">
+                           <div class="col-md-5 col-sm-5 col-xs-5">
+                                <div class="input-group ">
+                                        <input type="textarea" placeholder="To Do ..." ng-model="content" class="form-control"  />
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                                <div class=" col-md-4 col-sm-4 col-xs-4">
+                                    <div class="input-group">
+                                        <input type="text"  uib-datepicker-popup ng-model="date" is-open="popup.opened" datepicker-options="dateOptions"
+                                               ng-required="true" close-text="Close" id="date" name="date"  placeholder="yyyy-MM-dd" class="form-control"/>
+                                              <span class="input-group-btn" >
+                                                    <button type="button" class="btn btn-default"  ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                              </span>
+                                    </div>
+                                </div>
+                                <div class=" col-md-2 col-sm-2 col-xs-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            Done? <input type="checkbox" ng-model="done"  />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-sm-1 col-xs-1">
+                                    <div class="form-group ">
+                                        <button type="submit" value="Add" ng-click="addTodos(); reloadPage()" class="add-button">Add</button>
+                                </div>
+                           </div>
+                     </div>
+                 </div>
             </form>
 
             <div class="centered">
@@ -95,7 +93,7 @@
                             <td  class="table-todos">
                                   <input type="button" class="button-blue" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" />
                             </td>
-                    </form>
+                        </form>
                     </tr>
                     </tbody>
                 </table>

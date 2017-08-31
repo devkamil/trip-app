@@ -47,7 +47,7 @@
 
     .input-group {
 
-
+        float: none;
         margin: 0 auto;
         margin-bottom: 1em;
     }
@@ -56,6 +56,20 @@
         float: none;
         margin: 0 auto;
     }
+
+    div.container-fluid {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+
+
+
+
+
+
+
+
 
 
 
