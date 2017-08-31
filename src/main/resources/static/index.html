@@ -21,19 +21,6 @@
 
 <body ng-app="todo-app" class="ng-cloak">
 
-<!--<style>-->
-  <!--.full button span {-->
-    <!--background-color: limegreen;-->
-    <!--border-radius: 32px;-->
-    <!--color: black;-->
-  <!--}-->
-  <!--.partially button span {-->
-    <!--background-color: orange;-->
-    <!--border-radius: 32px;-->
-    <!--color: black;-->
-  <!--}-->
-<!--</style>-->
-
 <div class="container">
     <h3 class="title"><b>ToDo App</b></h3>
 
@@ -48,28 +35,24 @@
 
                                     <div class="input-group"> <!-- Date input -->
 
-<div class="form-group col-md-4 col-sm-4 col-xs-4">
- <!--col-md-offset-3 col-sm-offset-3 col-xs-offset-3">-->
-                   <input type="textarea" placeholder="To Do ..." ng-model="content" class="form-control input-group-lg content"  />
-</div>
-                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-->
- <div class="form-inline col-md-4 col-sm-4 col-xs-4">
-                                        <input type="text"  uib-datepicker-popup ng-model="date" is-open="popup.opened" datepicker-options="dateOptions"
-                                           ng-required="true" close-text="Close" id="date" name="date"  placeholder="yyyy-MM-dd" class="form-control input-group-lg"/>
-</div>
- <div class="form-group col-md-1 col-sm-1 col-xs-1">
-                                     <span class="input-group-btn" >
-                                            <button type="button" class="btn form-control input-group-lg"  ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-                                        </span>
- </div>
-<div class="col-md-2 col-sm-2 col-xs-2">
-                                    Done? <input type="checkbox" ng-model="done" />
- </div>
-                                            <!--&nbsp; &nbsp;-->
-<div class="col-md-1 col-sm-1 col-xs-1">
-    <input type="submit" value="Add" ng-click="addTodos(); reloadPage()" class="add-button"/>
-
-</div>
+                                         <div class="form-group col-md-4 col-sm-4 col-xs-4">
+                                            <input type="textarea" placeholder="To Do ..." ng-model="content" class="form-control input-group-lg content"  />
+                                         </div>
+                                         <div class="form-inline col-md-4 col-sm-4 col-xs-4">
+                                             <input type="text"  uib-datepicker-popup ng-model="date" is-open="popup.opened" datepicker-options="dateOptions"
+                                                      ng-required="true" close-text="Close" id="date" name="date"  placeholder="yyyy-MM-dd" class="form-control input-group-lg"/>
+                                         </div>
+                                         <div class="form-group col-md-1 col-sm-1 col-xs-1">
+                                              <span class="input-group-btn" >
+                                                    <button type="button" class="btn form-control input-group-lg"  ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                               </span>
+                                         </div>
+                                         <div class="col-md-2 col-sm-2 col-xs-2">
+                                                Done? <input type="checkbox" ng-model="done" />
+                                         </div>
+                                         <div class="col-md-1 col-sm-1 col-xs-1">
+                                             <input type="submit" value="Add" ng-click="addTodos(); reloadPage()" class="add-button"/>
+                                         </div>
 
                                     </div>
 
@@ -77,12 +60,7 @@
                             </div>
                         </div>
                     </div>
-
             </form>
-
-
-
-
 
             <div class="centered">
                 <table>
@@ -99,29 +77,6 @@
 
                     <tr ng-repeat="tod in todos" >
                         <form>
-                        <!--<td class="table-todos">-->
-                            <!--<div ng-hide="viewField">{{tod.content}}</div>-->
-                            <!--<div ng-show="modifyField"><input type="text" ng-model="tod.content" /></div>-->
-                        <!--</td>-->
-                        <!--<td class="table-todos">{{tod.date | date: 'yyyy-MM-dd'}}</td>-->
-                        <!--<td class="table-todos">-->
-                            <!--<div ng-hide="viewField">{{tod.done | doneUndone}}</div>-->
-                            <!--<div ng-show="modifyField"><input type="checkbox" value="{{tod.done}}" ng-model="tod.done" /></div>-->
-                        <!--</td >-->
-                        <!--<td class="table-todos">-->
-                            <!--<input type="button" value="Edit" ng-hide="viewField" ng-click="modify(tod)"  />-->
-                            <!--<input type="submit" value="Update" ng-show="modifyField" ng-click="editTodo(tod); reloadPage()" />-->
-                        <!--</td>-->
-                        <!--<td  class="table-todos">-->
-                            <!--<input type="button" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" />-->
-                        <!--</td>-->
-
-
-
-
-
-
-
                             <td class="table-todos">
                                 <div ng-hide="editingTodo[tod.id]">{{tod.content}}</div>
                                 <div ng-show="editingTodo[tod.id]"><input type="text" ng-model="tod.content" /></div>
@@ -140,19 +95,11 @@
                             <td  class="table-todos">
                                   <input type="button" class="button-blue" value="Delete" ng-click="removeTodo(tod.id); reloadPage()" />
                             </td>
-
-
-
-
-
-
-
                     </form>
                     </tr>
                     </tbody>
                 </table>
             </div>
-
 
         </div>
 </div>

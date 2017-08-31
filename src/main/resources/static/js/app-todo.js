@@ -39,12 +39,6 @@ app.controller('mainController', function ($scope, $http, $window) {
     })};
 
 
-//    $scope.modify = function(tod){
-//        $scope.modifyField = true;
-//        $scope.viewField = true;
-//    };
-
-
 
     $scope.open = function() {
         $scope.popup.opened = true;
@@ -58,8 +52,6 @@ app.controller('mainController', function ($scope, $http, $window) {
     startingDay: 1,
     showWeeks: false
   };
-
-
 
 
 
@@ -81,52 +73,7 @@ app.controller('mainController', function ($scope, $http, $window) {
     };
 
 
-
-
-//    $scope.update = function(tod) {
-//        $scope.modifyField = false;
-//        $scope.viewField = false;
-//    };
-
-//    $scope.update = function(tod){
-//        $scope.editingTodo[tod.id] = false;
-//    };
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-//    $scope.inlineOptions = {
-//        customClass: getDayClass,
-//        minDate: new Date(),
-//        showWeeks: true
-//    };
-//
-//    $Scope.dateOptions = {
-//        formatYear: 'yy',
-//        maxDate: new Date(2020, 5, 22),
-//        minDate: new Date(),
-//        startingDay: 1
-//    };
-
-
-
-
-
-
-
 
 
 
@@ -135,25 +82,3 @@ app.filter('doneUndone', function() {
         return text ? "Done" : "Undone";
      }
 });
-
-
-
-
-//app.directive('dateFrom', function() {
-//    return function(scope, element, attrs) {
-//        $(element).datepicker({minDate: currentTime });
-//        $(element).change(function () {
-//            currentTime = element.val();
-//        });
-
-
-//       return function(){
-//            $('datetimepicker4').datetimepicker();
-//    };
-//});
-
-
-//
-//           $(function () {
-//                $('#datetimepicker4').datetimepicker();
-//            });
