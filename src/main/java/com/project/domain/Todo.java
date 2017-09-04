@@ -1,11 +1,13 @@
-package com.project;
+package com.project.domain;
 
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
 public class Todo {
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,12 +53,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo{" +
-                "id=" + id +
-                ", content='" + content + '\'' +
-                ", done=" + done +
-                ", date='" + date + '\'' +
-                '}';
+        return "Todo: "  + content + ", date: " + dateFormat.format(date) + ", done: " + done + "." + "\n";
     }
 
     @Override
