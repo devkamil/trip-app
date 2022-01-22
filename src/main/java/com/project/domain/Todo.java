@@ -13,7 +13,7 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="todo_id")
     private Long id;
-    private String content;
+    private String name;
     private boolean done;
     private Date date;
 
@@ -26,12 +26,12 @@ public class Todo {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getName() {
+        return name;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Date getDate() {
@@ -53,7 +53,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo: "  + content + ", date: " + dateFormat.format(date) + ", done: " + done + "." + "\n";
+        return "Todo: "  + name + ", date: " + dateFormat.format(date) + ", done: " + done + "." + "\n";
     }
 
     @Override
@@ -65,14 +65,14 @@ public class Todo {
 
         if (done != todo.done) return false;
         if (id != null ? !id.equals(todo.id) : todo.id != null) return false;
-        if (content != null ? !content.equals(todo.content) : todo.content != null) return false;
+        if (name != null ? !name.equals(todo.name) : todo.name != null) return false;
         return date != null ? date.equals(todo.date) : todo.date == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (done ? 1 : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;

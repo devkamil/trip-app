@@ -12,7 +12,7 @@ app.controller('mainController', function ($scope, $http, $window) {
         $http({
               method: 'POST',
               url: 'api/todos',
-              data: {"content":$scope.content, "date":$scope.date, "done":$scope.done},
+              data: {"name":$scope.name, "date":$scope.date, "done":$scope.done},
               headers: {'Content-Type':'application/json'}
 
         })
@@ -34,7 +34,7 @@ app.controller('mainController', function ($scope, $http, $window) {
         $http({
             method: 'PUT',
             url: 'api/todos/' + tod.id,
-             data: {"id":tod.id, "content":tod.content, "date":tod.date, "done":tod.done},
+             data: {"id":tod.id, "name":tod.name, "date":tod.date, "done":tod.done},
              headers: {'Content-Type':'application/json'}
     })};
 

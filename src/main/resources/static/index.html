@@ -32,7 +32,7 @@
                        <div class="col-md-7 col-sm-10 col-xs-11 col-md-offset-2 col-xs-offset-1 col-centered">
                            <div class="col-md-5 col-sm-5 col-xs-5">
                                 <div class="input-group ">
-                                        <input type="textarea" placeholder="To Do ..." ng-model="content" class="form-control"  />
+                                        <input type="textarea" placeholder="To Do ..." ng-model="name" class="form-control"  />
                                 </div>
                             </div>
                                 <div class=" col-md-4 col-sm-4 col-xs-4">
@@ -76,8 +76,8 @@
                     <tr ng-repeat="tod in todos" >
                         <form>
                             <td class="table-todos">
-                                <div ng-hide="editingTodo[tod.id]">{{tod.content}}</div>
-                                <div ng-show="editingTodo[tod.id]"><input type="text" ng-model="tod.content" /></div>
+                                <div ng-hide="editingTodo[tod.id]">{{tod.name}}</div>
+                                <div ng-show="editingTodo[tod.id]"><input type="text" ng-model="tod.name" /></div>
                             </td>
                             <td class="table-todos">
                                 {{tod.date | date: 'yyyy-MM-dd'}}
