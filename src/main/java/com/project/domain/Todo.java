@@ -4,6 +4,7 @@ package com.project.domain;
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class Todo {
@@ -95,34 +96,31 @@ public class Todo {
         this.difficult = difficult;
     }
 
+    @Override
+    public String toString() {
+        return "Todo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", routeLength=" + routeLength +
+                ", startsFrom='" + startsFrom + '\'' +
+                ", finish='" + finish + '\'' +
+                ", difficult=" + difficult +
+                ", dateFrom=" + dateFrom +
+                ", dateTo=" + dateTo +
+                ", days=" + days +
+                '}';
+    }
 
-//    @Override
-//    public String toString() {
-//        return "Todo: "  + name + ", dateFrom: " + dateFormat.format(dateFrom) + ", done: " + done + "." + "\n";
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Todo todo = (Todo) o;
+        return getRouteLength() == todo.getRouteLength() && isDifficult() == todo.isDifficult() && getDays() == todo.getDays() && getId().equals(todo.getId()) && getName().equals(todo.getName()) && getStartsFrom().equals(todo.getStartsFrom()) && getFinish().equals(todo.getFinish()) && getDateFrom().equals(todo.getDateFrom()) && getDateTo().equals(todo.getDateTo());
+    }
 
-
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Todo todo = (Todo) o;
-//
-//        if (done != todo.done) return false;
-//        if (id != null ? !id.equals(todo.id) : todo.id != null) return false;
-//        if (name != null ? !name.equals(todo.name) : todo.name != null) return false;
-//        return date != null ? date.equals(todo.date) : todo.date == null;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = id != null ? id.hashCode() : 0;
-//        result = 31 * result + (name != null ? name.hashCode() : 0);
-//        result = 31 * result + (done ? 1 : 0);
-//        result = 31 * result + (date != null ? date.hashCode() : 0);
-//        return result;
-//    }
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getRouteLength(), getStartsFrom(), getFinish(), isDifficult(), getDateFrom(), getDateTo(), getDays());
+    }
 }
