@@ -78,21 +78,6 @@ app.controller('mainController', function ($scope, $http, $window) {
                     response = response.data;
      })};
 
-
-
-
-//     $scope.selectStartDate = function(value){
-//        $scope.filterByStartDate = value;
-//        console.log("VALUE selectStartDate: ", value)
-//     }
-
-//  $scope.selectName = function(value){
-//     $scope.filterByName = value;
-//  }
-
-
-
-
     $scope.editingTodo = {};
 
     for (var i = 0, length = $scope.todos.length; i < length; i++) {
@@ -114,17 +99,6 @@ app.filter('isDifficult', function() {
      }
 });
 
-//
-//app.filter('dateFormat', function($filter)
-//    {
-//        return function(input)
-//        {
-//            if(input == null){ return ""; }
-//            var _date = $filter('date')(new Date(input), 'yyyy-MM-dd');
-//            return _date.toUpperCase();
-//        };
-//    });
-//
 
 app.filter("myfilter", function() {
       return function(items, from, to) {
