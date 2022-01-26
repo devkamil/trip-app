@@ -140,17 +140,6 @@
       text-decoration: none;
     }
 
-
-
-
-
-
-
-
-
-
-
-
      .accordion-submain {
          list-style-type: none;
          margin: 5px auto;
@@ -184,6 +173,6 @@
 
      div.accordion-content div:hover {
          background-color: #cdcdc8;
-         color: #3c3b37;
+         color: #dedcd5;
          padding: 5px 0;
      }
