@@ -14,8 +14,13 @@ public class Todo {
     @Column(name="todo_id")
     private Long id;
     private String name;
-    private boolean done;
-    private Date date;
+    private int routeLength;
+    private String startsFrom;
+    private String finish;
+    private boolean difficult;
+    private Date dateFrom;
+    private Date dateTo;
+    private int days;
 
 
     public Long getId() {
@@ -34,48 +39,90 @@ public class Todo {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public int getRouteLength(){
+        return routeLength;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setRouteLength(int routeLength){
+        this.routeLength = routeLength;
     }
 
-    public boolean isDone() {
-        return done;
+    public String getStartsFrom() {
+        return startsFrom;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    public void setStartsFrom(String startsFrom) {
+        this.startsFrom = startsFrom;
+    }
+
+    public String getFinish() {
+        return finish;
+    }
+
+    public void setFinish(String finish) {
+        this.finish = finish;
+    }
+
+    public Date getDateFrom() {
+        return dateFrom;
+    }
+
+    public void setDateFrom(Date dateFrom) {
+        this.dateFrom = dateFrom;
+    }
+
+    public Date getDateTo() {
+        return dateTo;
+    }
+
+    public void setDateTo(Date dateTo) {
+        this.dateTo = dateTo;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public boolean isDifficult() {
+        return difficult;
+    }
+
+    public void setDifficult(boolean difficult) {
+        this.difficult = difficult;
     }
 
 
-    @Override
-    public String toString() {
-        return "Todo: "  + name + ", date: " + dateFormat.format(date) + ", done: " + done + "." + "\n";
-    }
+//    @Override
+//    public String toString() {
+//        return "Todo: "  + name + ", dateFrom: " + dateFormat.format(dateFrom) + ", done: " + done + "." + "\n";
+//    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        Todo todo = (Todo) o;
 
-        if (done != todo.done) return false;
-        if (id != null ? !id.equals(todo.id) : todo.id != null) return false;
-        if (name != null ? !name.equals(todo.name) : todo.name != null) return false;
-        return date != null ? date.equals(todo.date) : todo.date == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (done ? 1 : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Todo todo = (Todo) o;
+//
+//        if (done != todo.done) return false;
+//        if (id != null ? !id.equals(todo.id) : todo.id != null) return false;
+//        if (name != null ? !name.equals(todo.name) : todo.name != null) return false;
+//        return date != null ? date.equals(todo.date) : todo.date == null;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        int result = id != null ? id.hashCode() : 0;
+//        result = 31 * result + (name != null ? name.hashCode() : 0);
+//        result = 31 * result + (done ? 1 : 0);
+//        result = 31 * result + (date != null ? date.hashCode() : 0);
+//        return result;
+//    }
 
 }
