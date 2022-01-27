@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class Todo {
+public class Trip {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="todo_id")
+    @Column(name="trip_id")
     private Long id;
     private String name;
     private int routeLength;
@@ -98,7 +98,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo{" +
+        return "Trip{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", routeLength=" + routeLength +
@@ -115,8 +115,8 @@ public class Todo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Todo todo = (Todo) o;
-        return getRouteLength() == todo.getRouteLength() && isDifficult() == todo.isDifficult() && getDays() == todo.getDays() && getId().equals(todo.getId()) && getName().equals(todo.getName()) && getStartsFrom().equals(todo.getStartsFrom()) && getFinish().equals(todo.getFinish()) && getDateFrom().equals(todo.getDateFrom()) && getDateTo().equals(todo.getDateTo());
+        Trip trip = (Trip) o;
+        return getRouteLength() == trip.getRouteLength() && isDifficult() == trip.isDifficult() && getDays() == trip.getDays() && getId().equals(trip.getId()) && getName().equals(trip.getName()) && getStartsFrom().equals(trip.getStartsFrom()) && getFinish().equals(trip.getFinish()) && getDateFrom().equals(trip.getDateFrom()) && getDateTo().equals(trip.getDateTo());
     }
 
     @Override

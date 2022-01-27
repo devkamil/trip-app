@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.project</groupId>
-	<artifactId>todo-app</artifactId>
+	<artifactId>trip-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>to-do-app</name>
+	<name>trip-app</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

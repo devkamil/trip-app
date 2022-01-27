@@ -1,6 +1,6 @@
 package com.project.messaging;
 
-import com.project.service.TodoRepository;
+import com.project.service.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.TemplateEngine;
@@ -20,17 +20,17 @@ public class EmailController {
     }
 
     @Autowired
-    private TodoRepository todoRepository;
+    private TripRepository tripRepository;
 
 
     public void send(){
         Context context = new Context();
-        context.setVariable("header", "ToDo App mailing");
-        context.setVariable("title", "Undone things to do (sorted by date):");
-        context.setVariable("description", todoRepository.findLateUndoneTodos() );
+        context.setVariable("header", "Trip App mailing");
+        context.setVariable("title", "Difficult trips to do (sorted by date):");
+        context.setVariable("description", tripRepository.findLateUndoneTrips() );
 
         String body = templateEngine.process("template", context);
-        emailSender.sendEmail("TO", "ToDo App Undone Things", body);
+        emailSender.sendEmail("TO", "Trip App Difficult Trips", body);
     }
 
 }
