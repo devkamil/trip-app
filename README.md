@@ -1,7 +1,7 @@
-# todo-app
+# trip-app
 
 
-ToDo App is responsive application to reminding our things To Do.
+Trip App is responsive application to searching our trips.
 
 Used technologies:
 
