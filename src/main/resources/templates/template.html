@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:remove="all">Todo App</title>
+    <title th:remove="all">Trip App</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <style type="text/css">
@@ -24,7 +24,7 @@
         <td height="100" align="center"><h3 th:utext="${#strings.replace(#strings.escapeJava(description),'\n','&lt;br /&gt;')}">description</h3></td>
     </tr>
     <tr>
-        <td height="50" align="center"><p>Send by ToDo App</p></td>
+        <td height="50" align="center"><p>Send by Trip App</p></td>
     </tr>
 </table>
 </body>
